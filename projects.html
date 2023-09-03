@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Science and Design Portfolio">
+    <title>Projects</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Add this line -->
+</head>
+<body class="Projects">
+<h1>Projects</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="text">
+            <h2>A simple but delicious Donut </h2>
+            <p>This project is a collaboration with Index4D to showcase some great advances in the 3-dimensional space.
+                Using a new machine learning model, we were able to generate 3D Objects with a descriptive text input. We are developing further on this. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. ... </p>
+        </div>
+
+        <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="-40deg 75deg 400%" camera-controls auto-rotate ar ios-src exposure="6.5" shadow-intensity="2">
+            <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" >
+                <div class="annotation">This annotation is fixed in world-space</div>
+            </button>
+            <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" >
+                <div class="annotation">This hotspot disappears completely</div>
+            </button>
+        </model-viewer>
+    </div>
+    <div class="content">
+        <div class="text">
+            <h2>Project Description</h2>
+            <p>This page is a collaboration of Index4D and RSLT to showcase some great advances in the 3 dimensinal space. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. You can ask for the ingredients or for something far more important than this... </p>
+        </div>
+        <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="calc(-1.rad + env(window-scroll-y) * 4rad) calc(0deg + env(window-scroll-y) * 90deg) calc(1m - env(window-scroll-y) * 4m)" camera-controls auto-rotate ar ios-src exposure="6.5"  shadow-intensity="2">
+            <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" data-normal="0 0 1">
+                <div class="annotation">This annotation is fixed in world-space</div>
+            </button>
+            <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" data-normal="0 0 1">
+                <div class="annotation">This hotspot disappears completely</div>
+            </button>
+        </model-viewer>
+    </div>
+    </div>
+    <div class="content">
+        <div class="text">
+            <h2>Project Description</h2>
+            <p>This page is a collaboration of Index4D and RSLT to showcase some great advances in the 3 dimensinal space. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. You can ask for the ingredients or for something far more important than this... </p>
+        </div>
+        <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="-40deg 75deg 400%" camera-controls auto-rotate ar ios-src exposure="6.5" shadow-intensity="2">
+            <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" >
+                <div class="annotation">This annotation is fixed in world-space</div>
+            </button>
+            <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" >
+                <div class="annotation">This hotspot disappears completely</div>
+            </button>
+        </model-viewer>
+    </div>
+    </div>
+    <div class="content">
+        <div class="text">
+            <h2>Project Description</h2>
+            <p>This page is a collaboration of Index4D and RSLT to showcase some great advances in the 3 dimensinal space. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. You can ask for the ingredients or for something far more important than this... </p>
+        </div>
+        <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="-40deg 75deg 400%" camera-controls auto-rotate ar ios-src exposure="6.5" shadow-intensity="2">
+            <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" >
+                <div class="annotation">This annotation is fixed in world-space</div>
+            </button>
+            <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" >
+                <div class="annotation">This hotspot disappears completely</div>
+            </button>
+        </model-viewer>
+    </div>
+    <footer>
+        <p>© 2022 Portfolio Presentation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
