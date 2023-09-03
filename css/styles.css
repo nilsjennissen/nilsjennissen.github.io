@@ -1,17 +1,25 @@
-body.Home .content:hover {
-    background-color: rgba(80, 92, 155, 0.49); /* Change this to your preferred color for Home page */
+:root {
+    --body-background-color: rgb(245, 241, 241);
+    --content-hover-color: rgba(250, 240, 103, 0.51);
+    --home-hover-color: rgba(80, 92, 155, 0.49);
+    --projects-hover-color: rgba(224, 109, 89, 0.52);
+    --skills-hover-color: rgba(218, 209, 82, 0.5);
+    --contact-hover-color: rgba(118, 225, 89, 0.5);
+    --h1-background-color: rgba(112, 246, 75, 0.47);
+    --h1-color: #f5f1f1;
+    --home-h1-background-color: rgba(80, 92, 155, 0.49);
+    --projects-h1-background-color: rgba(224, 109, 89, 0.52);
+    --skills-h1-background-color: rgba(218, 209, 82, 0.5);
+    --contact-h1-background-color: rgba(118, 225, 89, 0.5);
+    --hotspot-background-color: #ee7663;
+    --hotspot-hand-background-color: #12f39d;
+    --hotspot-foot-border-color: #12f39d;
+    --annotation-background-color: #ffffff;
+    --navbar-background-color: #333;
+    --navbar-link-color: white;
+    --navbar-link-hover-color: #111;
 }
 
-body.Projects .content:hover {
-    background-color: rgba(224, 109, 89, 0.52); /* Change this to your preferred color for Projects page */
-}
-body.Skills .content:hover {
-    background-color: rgba(218, 209, 82, 0.5); /* Change this to your preferred color for Home page */
-}
-
-body.Contact .content:hover {
-    background-color: rgba(118, 225, 89, 0.5); /* Change this to your preferred color for Projects page */
-}
 body {
     margin: 0;
     padding: 20px;
@@ -19,12 +27,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     height: 250vh;
-    background-color: rgb(245, 241, 241);
+    background-color: var(--body-background-color);
     font-family: 'Bungee', bold;
 }
 
 .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     height: 100%;
@@ -32,27 +41,45 @@ body {
     border-bottom: 1px solid rgba(122, 121, 121, 0.01);
     padding-bottom: 20px;
     margin-bottom: 20px;
+    transition: background-color 0.5s ease;
 }
 .content {
     transition: background-color 0.5s ease;
 }
 
 .content:hover {
-    background-color: rgba(250, 240, 103, 0.51); /* Change this to your preferred color */
+    background-color: var(--content-hover-color);
+}
+
+body.Home .content:hover {
+    background-color: var(--home-hover-color);
+}
+
+body.Projects .content:hover {
+    background-color: var(--projects-hover-color);
+}
+
+body.Skills .content:hover {
+    background-color: var(--skills-hover-color);
+}
+
+body.Contact .content:hover {
+    background-color: var(--contact-hover-color);
 }
 
 
+
 model-viewer {
-    width: 50%; /* One thirds of the width */
+    width: 50%;
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0; /* Changed from left to right */
+    right: 0;
     z-index: 1;
 }
 
 .text {
-    width: 50%; /* Two third of the width */
+    width: 50%;
     max-width: 600px;
     padding: 20px;
     display: flex;
@@ -69,49 +96,51 @@ h1, h2, p {
 h1 {
     text-align: left;
     width: 100%;
-    font-size: 8em;
-    background-color: rgba(112, 246, 75, 0.47);
-    color: #f5f1f1;
+    font-size: clamp(2rem, 8vw, 8em);
+    background-color: var(--h1-background-color);
+    color: var(--h1-color);
     padding: 10px;
 }
+
+
 body.Home h1 {
-    background-color: rgba(80, 92, 155, 0.49); /* Change this to your preferred color for Home page */
+    background-color: var(--home-h1-background-color);
 }
 
 body.Projects h1 {
-    background-color: rgba(224, 109, 89, 0.52); /* Change this to your preferred color for Projects page */
+    background-color: var(--projects-h1-background-color);
 }
 
 body.Skills h1 {
-    background-color: rgba(218, 209, 82, 0.5); /* Change this to your preferred color for Skills page */
+    background-color: var(--skills-h1-background-color);
 }
 
 body.Contact h1 {
-    background-color: rgba(118, 225, 89, 0.5); /* Change this to your preferred color for Contact page */
+    background-color: var(--contact-h1-background-color);
 }
 
 h2 {
     text-align: left;
     width: 100%;
-    font-size: 3em;
+    font-size: clamp(1.5rem, 4vw, 3em);
 }
 
 p {
     text-align: left;
     width: 100%;
-    font-size: 1.5em;
+    font-size: clamp(1rem, 2vw, 1.5em);
 }
 
 .contact {
     text-align: left;
     width: 100%;
-    font-size: 1.5em;
+    font-size: clamp(1rem, 2vw, 1.5em);
 }
 
 .second-paragraph {
     text-align: left;
     width: 100%;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 3vw, 2em);
 }
 
 footer {
@@ -133,16 +162,16 @@ footer {
 
 .hotspot[slot="hotspot-hand"]{
     --min-hotspot-opacity: 0;
-    background-color: #12f39d;
+    background-color: var(--hotspot-hand-background-color);
 }
 
 .hotspot[slot="hotspot-foot"]:not([data-visible]) {
     background-color: transparent;
-    border: 3px solid #12f39d;
+    border-color: var(--hotspot-foot-border-color);
 }
 
 .annotation{
-    background-color: #ffffff;
+    background-color: var(--annotation-background-color);
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
@@ -156,35 +185,13 @@ footer {
     width: 100%;
     z-index: 100;
 }
-.nav-item1 {
-    background-color: red; /* Change to the color you want */
-}
-
-.nav-item2 {
-    background-color: blue; /* Change to the color you want */
-}
-
-.nav-item3 {
-    background-color: green; /* Change to the color you want */
-}
-
-.nav-item4 {
-    background-color: yellow; /* Change to the color you want */
-}
-.nav-item1, .nav-item2, .nav-item3, .nav-item4 {
-    padding: 10px;
-}
-
-.nav-item1 a, .nav-item2 a, .nav-item3 a {
-    color: white;
-}
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--navbar-background-color);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -196,65 +203,21 @@ nav li {
 
 nav li a {
     display: block;
-    color: white;
+    color: var(--navbar-link-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 nav li a:hover {
-    background-color: #111;
+    background-color: var(--navbar-link-hover-color);
 }
 
 
 /* Styles for screens that are 600px or less */
 @media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
+    model-viewer, .text {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
-
-    .content {
-        flex-direction: column;
-    }
-
-    model-viewer {
-        width: 100%;
-        height: 50%;
-    }
-
-    .text {
-        width: 100%;
-        max-width: none;
-    }
-
-    h1 {
-        font-size: 4em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    p, .contact, .second-paragraph {
-        font-size: 1em;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav li {
-        float: none;
-    }
-    nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
 }
