@@ -70,9 +70,6 @@ body {
     margin-bottom: calc((1em + 2vw) / 2);
     transition: background-color 0.5s ease;
 }
-.content {
-    transition: background-color 0.5s ease;
-}
 
 .content:hover {
     background-color: var(--content-hover-color);
@@ -212,16 +209,25 @@ footer {
 nav ul {
     box-sizing: border-box;
     list-style-type: none;
-    padding: calc((2em + 3vw) / 2);
+    padding: calc((2em + 2vw) / 2);
     z-index: 100;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 nav li {
     box-sizing: border-box;
     width: 25%;
     word-wrap: break-word;
+}
+
+nav li a {
+    display: block;
+    color: var(--navbar-link-color);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    font-family: var(--my-font-subheader);
+    font-size: clamp(4rem, 8vw, 12em); /* 1.5rem , clamp(4rem, 8vw, 16em)*/
 }
 
 nav li.home {
@@ -240,16 +246,6 @@ nav li.contact {
     background-color: var(--contact-hover-color);
 }
 
-nav li a {
-    display: block;
-    color: var(--navbar-link-color);
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.5s ease;
-    font-family: var(--my-font-subheader);
-    font-size: clamp(4rem, 8vw, 16em); /* 1.5rem , clamp(4rem, 8vw, 16em)*/
-}
-
 nav li.home a {
     background-color: var(--home-hover-color);
 }
@@ -266,19 +262,19 @@ nav li.contact a {
     background-color: var(--contact-hover-color);
 }
 
-nav li a.home:hover {
+nav li.home a:hover {
     background-color: var(--home-hover-color);
 }
 
-nav li a.projects:hover {
+nav li.projects a:hover {
     background-color: var(--projects-hover-color);
 }
 
-nav li a.skills:hover {
+nav li.skills a:hover {
     background-color: var(--skills-hover-color);
 }
 
-nav li a.contact:hover {
+nav li.contact a:hover {
     background-color: var(--contact-hover-color);
 }
 
