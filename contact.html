@@ -13,19 +13,44 @@
 <h1>Contact</h1>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="home" >home</a></li>
+            <li><a href="projects.html" class="projects" >projects</a></li>
+            <li><a href="skills.html" class="skills" >skills</a></li>
+            <li><a href="contact.html" class="contact" >contact</a></li>
         </ul>
     </nav>
-    <h2>Contact</h2>
-    <ul>
-        <li>Linkedin</li>
-        <li>GitHub</li>
-        <li>More</li>
-        <!-- Add more contacts as needed -->
-    </ul>
+    <div class="content">
+            <div class="text">
+                <h2>A simple but delicious Donut </h2>
+                <p>This project is a collaboration with Index4D to showcase some great advances in the 3-dimensional space.
+                    Using a new machine learning model, we were able to generate 3D Objects with a descriptive text input. We are developing further on this. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. ... </p>
+            </div>
+
+            <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="-40deg 75deg 400%" camera-controls auto-rotate ar ios-src exposure="6.5" shadow-intensity="2">
+                <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" >
+                    <div class="annotation">This annotation is fixed in world-space</div>
+                </button>
+                <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" >
+                    <div class="annotation">This hotspot disappears completely</div>
+                </button>
+            </model-viewer>
+    </div>
+    <div class="content">
+            <div class="text">
+                <h2>A simple but delicious Donut </h2>
+                <p>This project is a collaboration with Index4D to showcase some great advances in the 3-dimensional space.
+                    Using a new machine learning model, we were able to generate 3D Objects with a descriptive text input. We are developing further on this. We are baking something really nice here. If you are keen to see what's behind this donut, then start exploring this 3D model of a delicious donut. You can rotate and zoom in to see the details. ... </p>
+            </div>
+
+            <model-viewer src="models/donut.glb" alt="A 3D model of a donut" scale="1 1 1" disable-tap camera-orbit="-40deg 75deg 400%" camera-controls auto-rotate ar ios-src exposure="6.5" shadow-intensity="2">
+                <button class="hotspot" slot="hotspot-visor" data-position="30 -30 30" >
+                    <div class="annotation">This annotation is fixed in world-space</div>
+                </button>
+                <button class="hotspot" slot="hotspot-hand" data-position="-30 -30 -30" >
+                    <div class="annotation">This hotspot disappears completely</div>
+                </button>
+            </model-viewer>
+    </div>
     <div class="content">
             <div class="text">
                 <h2>A simple but delicious Donut </h2>

@@ -17,10 +17,12 @@
     --annotation-background-color: #ffffff;
     --navbar-background-color: #333;
     --navbar-link-color: white;
-    --navbar-link-hover-color: #111;
+    --navbar-link-hover-color: rgba(255, 243, 86, 0.54);
 }
 
+
 body {
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
     margin: 0;
@@ -131,11 +133,6 @@ p {
     font-size: clamp(1rem, 2vw, 1.5em);
 }
 
-.contact {
-    text-align: left;
-    width: 100%;
-    font-size: clamp(1rem, 2vw, 1.5em);
-}
 
 .second-paragraph {
     text-align: left;
@@ -192,34 +189,82 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: var(--navbar-background-color);
-    position: sticky;
-    bottom: 0;
     z-index: 100;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Changed from nowrap to wrap */
+}
+nav li {
+    width: 25%; /* Added width */
+    word-wrap: break-word; /* Added word-wrap */
 }
 
-nav li {
-    float: none;
+nav li.home {
+    background-color: var(--home-hover-color);
+}
+
+nav li.projects {
+    background-color: var(--projects-hover-color);
+}
+
+nav li.skills {
+    background-color: var(--skills-hover-color);
+}
+
+nav li.contact {
+    background-color: var(--contact-hover-color);
 }
 
 nav li a {
     display: block;
     color: var(--navbar-link-color);
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.5s ease;
+    font-size: 20px; /* Added font-size */
 }
 
-nav li a:hover {
-    background-color: var(--navbar-link-hover-color);
+nav li.home a {
+    background-color: var(--home-hover-color);
+    color: var(--navbar-link-color);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
 }
+
+nav li.projects a {
+    background-color: var(--projects-hover-color);
+}
+
+nav li.skills a {
+    background-color: var(--skills-hover-color);
+}
+
+nav li.contact a {
+    background-color: var(--contact-hover-color);
+}
+
+nav li a.home:hover {
+    background-color: var(--home-hover-color);
+}
+nav li a.projects:hover {
+    background-color: var(--projects-hover-color);
+}
+nav li a.skills:hover {
+    background-color: var(--skills-hover-color);
+}
+nav li a.contact:hover {
+    background-color: var(--contact-hover-color);
+}
+
 
 
 @media screen and (max-width: 600px) {
-    .content {
-        grid-template-columns: 1fr;
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        width: 100%; /* Changed width to 100% */
     }
 }
