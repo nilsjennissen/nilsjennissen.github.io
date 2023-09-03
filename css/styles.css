@@ -8,14 +8,14 @@
 @font-face {
     font-family: 'MyFontSubheader';
     src: url('../font/Thunder-BoldLC.ttf') format('truetype');
-    font-weight: 500; /* Light */
+    font-weight: 400; /* Light */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyFont';
     src: url('../font/Thunder-LightLC.ttf') format('truetype');
-    font-weight: 400; /* Bold */
+    font-weight: 500; /* Bold */
     font-style: normal;
 }
 
@@ -50,7 +50,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     margin: 0;
-    padding: calc((2em + 4vw) / 2); /* Increased padding */
+    padding: calc((2em + 4vw) / 2);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -96,6 +96,7 @@ body.Contact .content:hover {
 
 
 model-viewer {
+    box-sizing: border-box;
     grid-column: 2;
     width: 100%;
     height: 100%;
@@ -109,7 +110,7 @@ model-viewer {
     display: flex;
     flex-direction: column;
     z-index: -1;
-    padding: calc((3em + 4vw) / 2); /* Increased padding */
+    padding: calc((3em + 4vw) / 2);
     justify-content: center;
     align-items: center;
 }
@@ -118,9 +119,9 @@ h1 {
     box-sizing: border-box;
     text-align: center;
     width: 100%;
-    padding: calc((2em + 3vw) / 2); /* Increased padding */
+    padding: calc((0.5em + 0.5vw) / 2);
     font-family: var(--my-font-header);
-    font-size: clamp(12rem, 12vw, 8em);
+    font-size: clamp(10rem, 14vw, 16em);
     background-color: var(--h1-background-color);
     color: var(--h1-color);
 }
@@ -167,7 +168,7 @@ p {
 footer {
     width: 100%;
     text-align: center;
-    padding: calc((2em + 3vw) / 2); /* Increased padding */
+    padding: calc((1em + 2vw) / 2);
 }
 
 .hotspot{
@@ -196,7 +197,7 @@ footer {
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
-    padding: calc((2em + 3vw) / 2); /* Increased padding */
+    padding: calc((2em + 3vw) / 2);
 }
 
 
@@ -211,18 +212,16 @@ footer {
 nav ul {
     box-sizing: border-box;
     list-style-type: none;
-    margin: 0;
-    padding: calc((2em + 3vw) / 2); /* Increased padding */
-    overflow: hidden;
+    padding: calc((2em + 3vw) / 2);
     z-index: 100;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Changed from nowrap to wrap */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 nav li {
     box-sizing: border-box;
-    width: 25%; /* Added width */
-    word-wrap: break-word; /* Added word-wrap */
+    width: 25%;
+    word-wrap: break-word;
 }
 
 nav li.home {
@@ -247,16 +246,12 @@ nav li a {
     text-align: center;
     text-decoration: none;
     transition: background-color 0.5s ease;
-    font-size: 70px; /* Added font-size */
     font-family: var(--my-font-subheader);
+    font-size: clamp(4rem, 8vw, 16em); /* 1.5rem , clamp(4rem, 8vw, 16em)*/
 }
 
 nav li.home a {
     background-color: var(--home-hover-color);
-    color: var(--navbar-link-color);
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.5s ease;
 }
 
 nav li.projects a {
@@ -274,16 +269,18 @@ nav li.contact a {
 nav li a.home:hover {
     background-color: var(--home-hover-color);
 }
+
 nav li a.projects:hover {
     background-color: var(--projects-hover-color);
 }
+
 nav li a.skills:hover {
     background-color: var(--skills-hover-color);
 }
+
 nav li a.contact:hover {
     background-color: var(--contact-hover-color);
 }
-
 
 
 @media screen and (max-width: 600px) {
