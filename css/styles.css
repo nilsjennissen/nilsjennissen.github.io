@@ -1,27 +1,27 @@
 @font-face {
     font-family: 'MyFontHeader';
     src: url('../font/Thunder-BlackLC.ttf') format('truetype');
-    font-weight: 900; /* Black */
+    font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyFontSubheader';
     src: url('../font/Thunder-BoldLC.ttf') format('truetype');
-    font-weight: 400; /* Light */
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyFont';
     src: url('../font/Thunder-LightLC.ttf') format('truetype');
-    font-weight: 500; /* Bold */
+    font-weight: 500;
     font-style: normal;
 }
 
 :root {
     --body-background-color: rgb(245, 241, 241);
-    --body-background-color-transparent: rgba(245, 241, 241, 0.8);
+    --body-background-color-transparent: rgba(210, 206, 206, 0.8);
     --content-hover-color: rgba(250, 240, 103, 0.51);
     --home-hover-color: rgba(80, 92, 155, 0.49);
     --projects-hover-color: rgba(224, 109, 89, 0.52);
@@ -45,10 +45,12 @@
     --my-font: 'MyFont', MyFont, sans-serif;
 }
 
+body, .content, model-viewer, .text, h1, h2, p, .second-paragraph, footer, .hotspot, .annotation, .navbar, nav ul, nav li, nav li a {
+    box-sizing: border-box;
+}
 
 body {
     display: grid;
-    box-sizing: border-box;
     flex-direction: column;
     align-items: flex-start;
     height: 250vh;
@@ -88,9 +90,7 @@ body.Contact .content:hover {
     background-color: var(--contact-hover-color);
 }
 
-
 model-viewer {
-    box-sizing: border-box;
     grid-column: 2;
     width: 100%;
     height: 100%;
@@ -99,7 +99,6 @@ model-viewer {
 }
 
 .text {
-    box-sizing: border-box;
     grid-column: 1;
     display: flex;
     flex-direction: column;
@@ -110,7 +109,6 @@ model-viewer {
 }
 
 h1 {
-    box-sizing: border-box;
     text-align: center;
     width: 100%;
     padding: calc((0.5em + 0.5vw) / 2);
@@ -119,7 +117,6 @@ h1 {
     color: var(--h1-color);
     font-size: clamp(4rem, 14vw, 16em);
 }
-
 
 body.Home h1 {
     background-color: var(--home-h1-background-color);
@@ -144,17 +141,16 @@ h2 {
     font-size: clamp(1.5rem, 4vw, 3em);
 }
 
-p {
+p, .second-paragraph {
     text-align: justify;
     width: 100%;
     font-family: var(--my-font);
     font-size: clamp(1rem, 2vw, 3em);
-    line-height: 1.25; /* Added line-height */
+    line-height: 1.25;
 }
 
 .second-paragraph {
     text-align: left;
-    width: 100%;
     font-size: clamp(1.5rem, 3vw, 2em);
 }
 
@@ -171,7 +167,6 @@ footer {
     border-radius: 10px;
     border: none;
     background-color: #ee7663;
-    box-sizing: border-box;
     pointer-events: none;
 }
 
@@ -195,7 +190,7 @@ footer {
 .navbar {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 99%;
     z-index: 100;
     background-color: var(--body-background-color-transparent);
     padding-bottom: calc((1em + 2vw) / 2);
@@ -206,15 +201,15 @@ nav ul {
     list-style-type: none;
     z-index: 100;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* aligns items to the left */
-    padding-bottom: calc((1em + 2vw) / 2);
-    margin-bottom: calc((1em + 2vw) / 2);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0;
 }
 
 nav li {
     width: 25%;
     word-wrap: break-word;
+    padding: 0;
 }
 
 nav li a {
@@ -224,38 +219,23 @@ nav li a {
     text-decoration: none;
     transition: background-color 0.5s ease;
     font-family: var(--my-font-subheader);
-    font-size: clamp(4rem, 8vw, 16em); /* 1.5rem , clamp(4rem, 8vw, 16em)*/
+    font-size: clamp(2rem, 6vw, 14em);
+    padding: 0;
 }
 
-nav li.home {
+nav li.home, nav li.home a {
     background-color: var(--home-hover-color);
 }
 
-nav li.projects {
+nav li.projects, nav li.projects a {
     background-color: var(--projects-hover-color);
 }
 
-nav li.skills {
+nav li.skills, nav li.skills a {
     background-color: var(--skills-hover-color);
 }
 
-nav li.contact {
-    background-color: var(--contact-hover-color);
-}
-
-nav li.home a {
-    background-color: var(--home-hover-color);
-}
-
-nav li.projects a {
-    background-color: var(--projects-hover-color);
-}
-
-nav li.skills a {
-    background-color: var(--skills-hover-color);
-}
-
-nav li.contact a {
+nav li.contact, nav li.contact a {
     background-color: var(--contact-hover-color);
 }
 
@@ -273,15 +253,4 @@ nav li a.skills:hover {
 
 nav li a.contact:hover {
     background-color: var(--contact-hover-color);
-}
-
-
-@media screen and (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
-        width: 100%; /* Changed width to 100% */
-    }
 }
