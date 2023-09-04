@@ -19,6 +19,14 @@
     font-style: normal;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
 :root {
     --body-background-color: rgb(255, 255, 255);
     --navbar-color-transparent: rgb(40, 37, 37);
@@ -114,7 +122,7 @@ h1 {
     font-family: var(--my-font-header);
     background-color: var(--h1-background-color);
     color: var(--h1-color);
-    font-size: clamp(6rem, 14vw, 16em);
+    font-size: clamp(6rem, 14vw, 16rem);
 }
 
 body.Home h1 {
@@ -147,7 +155,7 @@ h2 {
     padding: calc((0.5em + 0.5vw) / 2);
     width: 100%;
     font-family: var(--my-font-subheader);
-    font-size: clamp(4rem, 4vw, 3em);
+    font-size: clamp(3rem, 5vw, 8rem);
 }
 
 p, .second-paragraph {
@@ -199,10 +207,10 @@ footer {
 .navbar {
     position: fixed;
     bottom: 0;
-    width: 97%;
+    width: 100%;
     z-index: 100;
     background-color: var(--navbar-background-color);
-    margin-bottom: calc((1em + 2vw) / 2);
+    margin-bottom: calc((2em + 3vw) / 2);
 }
 
 nav ul {
@@ -228,7 +236,7 @@ nav li a {
     transition: background-color 0.5s ease;
     font-family: var(--my-font-subheader);
     font-size: clamp(2rem, 6vw, 14em);
-    padding: 0;
+    padding: calc((0.5em + 2vw) / 2);
 }
 
 nav li.home, nav li.home a {
@@ -262,6 +270,7 @@ nav li a.skills:hover {
 nav li a.contact:hover {
     background-color: var(--contact-hover-color);
 }
+
 
 @media (prefers-color-scheme: dark) {
 
